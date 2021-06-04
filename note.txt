@@ -1,0 +1,52 @@
+Chiffrement Symetrique					Bouncy Castle
+Application:
+
+	*Generation des cles:
+Pour Invoquer les algorithmes de generation de cle on s;appuie sur des Engines.
+Engine:Une classe Java,avec un constructeur (private) datee d'une methode statique qui fournit une instance de l'engine
+Exemple:
+public class TDSI{
+	private TDSI instance = null;
+	private TDSI(){
+	------
+	------
+	}
+	public static TDSI getInstance(a){
+		if(instance == null){
+		instance = new TDSI(a);
+		}
+		return instance;
+	}
+}
+
+Exemple d'utilisation:
+TDSI obj = TDSI.getInstance(---);
+
+L'engine qui permet d'avoir des cles symetrique est : KeyGenerator
+comment sa marche:
+1-) la Recuperation de l'Instance:
+	KeyGenerator gen = KeyGenerator.getInstance('algo');
+	avec:'algo'='AES' ou 'DES' ou '3DES'
+2-) Initialisation:
+	gen.init(keysize);
+	avec keysize = 128 ou 256
+3-) Exploitation:(Run) autant de fois qu'on veut
+	SecretKey key = gen.generate();
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
